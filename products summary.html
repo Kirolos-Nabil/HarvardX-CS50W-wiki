@@ -5,6 +5,7 @@
 				<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
 				<link rel="stylesheet" href="stylesheet.css">
+				<link rel="stylesheet" href="products summary stylesheet.css">
     </head>
     <body>
 			<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -35,27 +36,51 @@
 
 			<div class="breadcrumb">
 				<div class="container">
-					<a class="ml-3" href="index.html">Home</a> / ITEM DETAILS
+					<a class="ml-3" href="index.html">Home</a> / SHOPPING CART
 				</div>
       </div>
 
-			<div class="container ">
-				<div id="item-details" class="row col-12 clearfix">
-					<div class="col-lg-4 col-sm-6 col-12"	>
-						<img src="product images/2.jpg" alt="Check image extention">
-					</div>
-					<div class="col-lg-8 col-sm-6 col-12">
-						<h5>Product name</h5>
-						<p> THIS FUJIFILM USA AUTHORIZED BUNDLE CONTAINS: Fujifilm X-H1 Mirrorless Digital Camera (Body Only) + VPB-XH1 Vertical Power Booster Grip + (2) SanDisk 64GB Extreme PRO SD Cards + Godox TT685F Thinklite TTL Flash + (4) Rechargeable AA Batteries + Camera Carrying Bag + 12" Gripster Tripod + Padded Hand & Neck Strap + Micro HDMI & Micro USB Cable + Lens Cap Keeper + USB SD Card Reader + Memory Card Wallet + Deluxe Cleaning Kit + THE FULL FUJIFILM USA 1-YEAR LIMITED WARRANTY! + More
-						CAMERA SPECIFICATIONS: 24.3MP APS-C X-Trans CMOS III Sensor - 5-Axis In-Body Image Stabilization - DCI 4K and Full HD Video
-						ADDITIONAL FEATURES: In-Body Image Stabilization - X-Processor Pro Image Processor - 0.75x 3.69m-Dot Electronic Viewfinder
-						USER-FRIENDLY OPERATION: Intelligent Hybrid 325-Point Autofocus System - Electronic Viewfinder and 3-Way Tilting LCD Screen
-						SIXTH AVENUE ELECTRONICS IS AN AUTHORIZED FUJIFILM DEALER! - YOUR PURCHASE WILL INCLUDE THE FULL 1-YEAR FUJIFILM USA WARRANTY! </p>
-						<a href="products summary.html" class="btn btn-primary">Add to cart</a>
-					</div>
+			<h3 class="container">SHOPPING CART [ <small> 2 Item(s) </small>]</h3><br>
+
+			<div class="container w-100 mx-auto">
+				<div>
+					<table class="table-responsive">
+						<thead>
+							<tr>
+								<th>Product</th>
+                <th>Description</th>
+                <th>Quantity/Update</th>
+                <th>Unit Price</th>
+                <th>Total</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th><img src="product images/2.jpg" alt="Check image extention"></th>
+								<th>Product name <br>THIS FUJIFILM USA AUTHORIZED BUNDLE CONTAINS: Fujifilm X-H1 Mirrorless ...<a href="item details.html">read more</a></th>
+								<th>1</th>
+								<th>7000EGP</th>
+								<th>7000EGP</th>
+							</tr>
+							<tr>
+								<th><img src="product images/1.jpg" alt="Check image extention"></th>
+								<th>Product name <br>THIS FUJIFILM USA AUTHORIZED BUNDLE CONTAINS: Fujifilm X-H1 Mirrorless...<a href="item details.html">read more</a></th>
+								<th>2</th>
+								<th>1500EGP</th>
+								<th>3000EGP</th>
+							</tr>
+							<tr>
+								<td colspan="5" style="text-align:right"><strong>TOTAL PRICE = 10,000EGP</strong></td>
+            	</tr>
+						</tbody>
+					</table>
 				</div>
+
+				<a href="index.html" class="btn-danger btn float-sm-left d-block d-sm-inline m-1">Continue Shopping</a>
+				<a href="#" class="btn-danger btn float-sm-right d-block d-sm-inline m-1">Submit</a>
 			</div>
 
+			<br><br><br>
 			<footer class="py-5 bg-dark text-white">
 				<div class="container">
 				  <div class="row">

@@ -1,4 +1,4 @@
- /* Home css */
+ /* main css */
 #logo{
 	max-height: 50px;
 	margin-left: 20px;
@@ -7,10 +7,13 @@
 #navbarTogglerDemo02{
 	margin-left: 10px;
 }
+body {
+	font-size: 14px;
+}
+/* Home css */
 .products {
 	display: flex;
 	flex-wrap: wrap;
-
 }
 .item {
 	display: inline-block;
@@ -43,7 +46,6 @@
 /* item details css */
 
 #item-details {
-	float: left;
 	background-color: #f7f7f7;
 	border: 1px solid #ddd;
 	border-radius: 5px;
@@ -60,3 +62,15 @@
 #item-details > div > p,button	 {
 	margin: 10px;
 }
+
+/*-----------------media----------------------*/
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  body {
+    font-size: 12px;
+  }
