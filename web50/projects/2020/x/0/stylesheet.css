@@ -17,7 +17,6 @@ body {
 }
 .item {
 	display: inline-block;
-	height: 275px;
 	background-color: #f7f7f7;
 	border: 1px solid #ddd;
 	border-radius: 5px;
@@ -34,13 +33,7 @@ body {
 	max-height: 100%;
 }
 .caption{
-	display: block;
-	position: absolute;
-	left: 50%;
-	bottom: 0;
-	transform: translateX(-50%);
-}
-.caption > h5,p {
+	margin-bottom: 20px;
 }
 
 /* item details css */
