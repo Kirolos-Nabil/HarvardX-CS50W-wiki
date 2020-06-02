@@ -1,0 +1,18 @@
+/* products summary css */
+$size: 10px;
+
+%tborder{
+	border: 1px solid #ddd;
+	padding: $size;
+}
+
+table {
+	@extend %tborder;
+	background-color: #f7f7f7;
+	border-radius: $size;
+	margin: $size;
+	text-align: center;
+	th, td {
+		@extend %tborder;
+	}
+}
