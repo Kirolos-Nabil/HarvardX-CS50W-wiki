@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+<!-- -------title-------  -->
+{% block title %}
+    home
+{% endblock %}
+<!-- -------style-------  -->
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename ='css/home.css') }}" crossorigin="anonymous"/>
+{% endblock %}
+<!-- -------body-------  -->
+{% block body %}
+<br><br>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for i in messages %}
+	<div class="alert alert-success" role="alert">
+		<strong>
+			{{i}}
+		</strong>
+	</div>
+{% endfor %} {%endif%} {%endwith%}
+
+<div class="row">
+	<div class="col-lg-3 col-sm-4 col-12 home-left container">
+		<form action="/cafe-books" method="POST" class="form-kn">
+      <div class="form-group">
+        <h6 for="name" class="left-label center pl-2">
+					Search Your favourite book
+				</h6>
+				<br>
+        <input type="search" name="byTitle" class="form-control mt-1" placeholder="Search by Title" aria-describedby="name"/>
+        <input type="search" name="byAuthor" class="form-control mt-1" placeholder="Search by Author" aria-describedby="name" />
+
+        <input type="number" name="byYear" class="form-control mt-1" placeholder="Search by Year" aria-describedby="name" />
+        <input type="search" name="byIsbn" class="form-control mt-1" placeholder="Search by ISBN" aria-describedby="name" />
+      </div>
+
+      <button type="submit" class="btns-kn btn btn-block m-0">
+        Submit
+      </button>
+    </form>
+	</div>
+	<div class="col-lg-9 col-sm-8 col-12 products">
+		{% if itemsCount %}
+    <div class="text-center alert alert-success fade show col-lg-9 col-sm-8 col-12">
+      <p>
+        Total <strong> {{itemsCount}} </strong> result found for: <strong> {{text}}</strong>
+      </p>
+    </div>
+    {%endif%} {% if msgNo %}
+    <div class="text-center alert alert-danger alert-dismissible fade show" role="alert">
+      <p>{{msgNo}} for: <strong> {{text}}</strong></p>
+    </div>
+
+    {{hello}} {%endif%} {%if items%}
+        {% for i in items %}
+				<div class="col-lg-3 col-sm-4 col-12 item">
+					<a href="{{baseUrl}}/{{i[1]}}" class="mt-2"><img src="{{ url_for('static', filename ='img/old-book.png')}}" alt="Check extention"></a>
+					<div class="caption">
+						<p>{{i[2]}} ({{i[4]}})
+						By {{i[3]}}</p>
+						<a href="{{baseUrl}}/{{i[1]}}" class="btn btn-primary btn-sm">Details</a>
+						<a href="{{baseUrl}}/api/{{i[1]}}" class="btn btn-primary btn-sm">ISBN: {{i[1]}}</a>
+					</div>
+				</div>
+        {% endfor %}
+    {%endif %}
+	</div>
+</div>
+<br><br>
+{% endblock %}
