@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+<!-- -------title-------  -->
+{% block title %}
+    registration
+{% endblock %}
+<!-- -------style-------  -->
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename ='css/registration.css') }}" crossorigin="anonymous"/>
+{% endblock %}
+<!-- -------body-------  -->
+{% block body %}
+<div class="row login-wrapper" style="display: flex; align-items: center;">
+  <div class="col-sm-12 col-md-6">
+    <div class="info mt-4">
+      <div class="card-body">
+        <h4 class="card-title">Book Cafe</h4>
+        <p class="card-text">
+          Don't forget your coffee when you start reading.
+        </p>
+        <img src="static/img/logo.png" alt="" class="login-logo"/>
+      </div>
+    </div>
+  </div>
+
+	<div class="col-sm-12 col-md-6 form-column">
+    <div class="d-block card-body card form mt-4">
+			<p class="sign-up btns float-right btn btn-lg actived">
+        Sign up
+      </p>
+      <a href="{{ url_for('login') }}" class="btns sign-in mb-4 mt-1 btn btn-lg">
+        Sign in
+      </a>
+
+			{% with messages = get_flashed_messages() %} {% if messages %} {% for i
+        in messages %}
+        <div class="alert alert-success" role="alert">
+          <strong>
+            {{i}}
+          </strong>
+        </div>
+        {% endfor %} {%endif%} {%endwith%}
+
+      <!-- sign in form start  -->
+			<div class="form-container">
+
+
+				<form id="signupForm" class="signup-form hide" method="POST" action="/registration_validation">
+	        <div class="form-group">
+	          <label>Your Name</label>
+	          <input name="signupName" class="form-control signup-name" placeholder="kirolos nabil" type="text" required/>
+	        </div>
+
+	        <div class="form-group">
+	          <label>Your email</label>
+	          <input name="signupEmail" class="form-control signup-email" placeholder="kirolos@kirolos.com" type="email" required/>
+	        </div>
+
+	        <div class="form-group">
+	          <label>Your password</label>
+	          <input name="signupPassword" id="signup-password" class="form-control signup-password" placeholder="********" type="password" required onkeyup="check();"/>
+	        </div>
+
+	        <div class="form-group">
+	          <label>Confirm password</label>
+	          <span class="badge confirm-pass-message"> ... </span>
+	          <input id="confirmPassword" class="form-control confirm-password" placeholder="********" type="password" onkeyup="check();"/>
+	        </div>
+
+	        <div class="form-group">
+	          <div class="checkbox">
+	            <label>
+	              <input type="checkbox" required /> By creating an account, you
+	              agree to the
+	              <a href="http://#">Free Membership Agreement</a> and
+	              <a href="http://#"> Privacy Policy </a>
+	            </label>
+	          </div>
+	        </div>
+
+	        <div class="form-group">
+	          <button type="submit" id="signupSubmit" class="login-btn btn btn-block">
+	            Sign up
+	          </button>
+	        </div>
+	      </form>
+        <!-- === sign in form finish  ===  -->
+			</div>
+    </div>
+  </div>
+</div>
+{% endblock %}
