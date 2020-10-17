@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+<!-- -------title-------  -->
+{% block title %}
+    profile
+{% endblock %}
+{% block address %}
+    profile
+{% endblock %}
+<!-- -------style-------  -->
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename ='css/profile.css') }}" crossorigin="anonymous"/>
+{% endblock %}
+<!-- -------body-------  -->
+{% block body %}
+<br><br>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for i in messages %}
+	<div class="alert alert-success" role="alert">
+		<strong>
+			{{i}}
+		</strong>
+	</div>
+{% endfor %} {%endif%} {%endwith%}
+
+<div class="row">
+	<div class="col-lg-3 col-sm-4 col-12 profile-left">
+		{%if userInfo %}
+    <div class="card">
+      <div class="card-body">
+        <h5>
+          Account Information
+        </h5>
+      </div>
+      <table class="table account-info" style="border: none;">
+        <tbody>
+          <tr>
+            <td>
+              <i class="fa fa-user font-weight-bold" aria-hidden="true"></i>
+              Name:
+            </td>
+            <td>{{userInfo['name']}}</td>
+          </tr>
+          <tr>
+            <td>
+              <i class="fa fa-envelope font-weight-bold" aria-hidden="true"></i>
+              Email:
+            </td>
+            <td>{{userInfo['email']}}</td>
+          </tr>
+          <tr>
+            <td>
+              <i class="fa fa-key font-weight-bold" aria-hidden="true"></i>
+              Password:
+            </td>
+            <td>{{userInfo['password']}}</td>
+          </tr>
+          <tr>
+            <td>
+              <i class="fa fa-calendar" aria-hidden="true"></i>Created on:
+            </td>
+            <td>{{userInfo['date'].strftime("%d %B, %Y") }}</td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-comment" aria-hidden="true"></i> Reviewed:</td>
+            <td>{{reviewCount}} books</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    {%endif%}
+	</div>
+	<div class="col-lg-9 col-sm-8 col-12">
+		<table class="table table-bordered" style="font-size: 12px;">
+      <tr class="bg-white">
+        <th colspan="4" style="color: #ff105f; font-weight: bold; text-align: center;">
+          Your reviewed books
+        </th>
+      </tr>
+      <tr class="table-row">
+        <th>ISBN</th>
+        <th>Rating</th>
+        <th>Comment</th>
+        <th>Date</th>
+      </tr>
+      {%if reviewedbooks%} {%for i in reviewedbooks %}
+      <tr class="table-row">
+        <td>
+          <a href="{{url_for('book_details', isbn = i[3] )}}"> {{i[3]}}</a>
+          <!-- {{i[3]}} -->
+        </td>
+        <td>{{i[1]}}</td>
+        <td>{{i[2]}}</td>
+        <td>{{ i[4].strftime("%d %B, %Y") }}</td>
+      </tr>
+      {%endfor%} {%endif%}
+    </table>
+	</div>
+</div>
+<br><br>
+{% endblock %}
