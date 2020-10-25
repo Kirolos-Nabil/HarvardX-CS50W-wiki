@@ -1,0 +1,80 @@
+ /* main css */
+#logo{
+	max-height: 50px;
+	margin-left: 20px;
+	margin-bottom: 5px;
+}
+#navbarTogglerDemo02{
+	margin-left: 10px;
+}
+#wrapper {
+  background: url("../img/login-bg.jpg");
+  background-size: cover;
+	background-attachment: fixed;
+}
+#overlay {
+  background: rgba(255, 255, 255, 0.2);
+  height: 100%;
+}#footer{
+	background: linear-gradient(to right, #000, #934a1e);
+}
+body {
+	font-size: 14px;
+}
+/* Home css */
+
+.navs{
+	background: linear-gradient(to right, #000, #934a1e);
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+	color: rgb(255,255,255);
+}
+.btns-kn {
+  background: #343a40;
+	border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+	color: rgb(255,255,255);
+}
+.btns-kn:hover {
+	box-shadow: inset -2px -2px 5px #0000, inset 2px 2px 5px #0a0a0a96;
+  outline: none;
+	color: rgb(255,255,255);
+}
+.btns {
+  background: linear-gradient(to right, #000, #934a1e);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+	color: rgb(255,255,255);
+}
+.btns:hover {
+	box-shadow: inset -2px -2px 5px #0000, inset 2px 2px 5px #0a0a0a96;
+  outline: none;
+	color: rgb(255,255,255);
+}
+.actived {
+  background: linear-gradient(to right, #000, #934a1e);
+  box-shadow: inset -2px -2px 5px #0000, inset 2px 2px 5px #0a0a0a96;
+  color: #fff;
+  border: none;
+}
+.actived:hover {
+  color: rgb(255,255,255);
+	box-shadow: none;
+}
+
+/*-----------------media----------------------*/
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  body {
+    font-size: 12px;
+  }

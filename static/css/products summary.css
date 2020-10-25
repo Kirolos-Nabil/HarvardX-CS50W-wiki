@@ -1,0 +1,14 @@
+/* products summary css */
+table th, table td, table {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+table {
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  margin: 10px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=products%20summary%20stylesheet.css.map */
