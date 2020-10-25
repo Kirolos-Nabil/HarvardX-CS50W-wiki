@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+			<title>{% block title %} {% endblock %}</title>
+			<!-- Required meta tags -->
+			<meta charset="utf-8" />
+			<meta	name="viewport"	content="width=device-width, initial-scale=1.0"/>
+			<!-- Bootstrap CSS -->
+			<link	rel="stylesheet"	href="{{ url_for('static', filename ='css/bootstrap/bootstrap.min.css') }}"	crossorigin="anonymous"/>
+			<link rel="stylesheet" href="{{ url_for('static', filename ='css/main.css')}}" crossorigin="anonymous"/>
+			{%block style %} {% endblock %}
+			<style></style>
+    </head>
+    <body>
+			<nav id="nav" class="navbar navbar-expand-sm navbar-dark bg-dark navs">
+				<div class="container">
+					<a class="navbar-brand" href="#"><img id="logo" src="{{ url_for('static', filename ='/img/logo.png')}}"></a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon">
+						</span>
+					</button>
+
+					<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+						<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+							<li class="nav-item">
+								<a class="nav-link" href="{{ url_for('home')}}">Home <span class="sr-only">(current)</span></a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ url_for('profile')}}">Profile</a>
+							</li>
+						</ul>
+						<a href="{{ url_for('logout')}}" class="sign-up btns-kn float-right btn mr-5">
+							Sign out
+						</a>
+					</div>
+					</div>
+			</nav>
+
+			<div id="wrapper">
+				<div id="overlay">
+      		<div class="container">
+						{% block body %} {% endblock %}
+      		</div>
+				</div>
+      </div>
+
+			<footer id="footer" class="py-5 bg-dark text-white">
+				<div class="container">
+				  <div class="row">
+				    <div class="col-12 col-md">
+							<a class="navbar-brand" href="#"><img id="logo" src="{{ url_for('static', filename ='/img/logo.png')}}"></a>
+						</div>
+				    <div class="col-6 col-md">
+				      <h5>Features</h5>
+				      <ul class="list-unstyled text-small">
+				        <li><a class="text-muted" href="#">Cool stuff</a></li>
+				        <li><a class="text-muted" href="#">Random feature</a></li>
+				        <li><a class="text-muted" href="#">Team feature</a></li>
+				        <li><a class="text-muted" href="#">Stuff for developers</a></li>
+				        <li><a class="text-muted" href="#">Another one</a></li>
+				        <li><a class="text-muted" href="#">Last time</a></li>
+				      </ul>
+				    </div>
+				    <div class="col-6 col-md">
+				      <h5>Resources</h5>
+				      <ul class="list-unstyled text-small">
+				        <li><a class="text-muted" href="#">Resource</a></li>
+				        <li><a class="text-muted" href="#">Resource name</a></li>
+				        <li><a class="text-muted" href="#">Another resource</a></li>
+				        <li><a class="text-muted" href="#">Final resource</a></li>
+				      </ul>
+				    </div>
+				    <div class="col-6 col-md">
+				      <h5>Resources</h5>
+				      <ul class="list-unstyled text-small">
+				        <li><a class="text-muted" href="#">Business</a></li>
+				        <li><a class="text-muted" href="#">Education</a></li>
+				        <li><a class="text-muted" href="#">Government</a></li>
+				        <li><a class="text-muted" href="#">Gaming</a></li>
+				      </ul>
+				    </div>
+				    <div class="col-6 col-md">
+				      <h5>About</h5>
+				      <ul class="list-unstyled text-small">
+				        <li><a class="text-muted" href="#">Team</a></li>
+				        <li><a class="text-muted" href="#">Locations</a></li>
+				        <li><a class="text-muted" href="#">Privacy</a></li>
+				        <li><a class="text-muted" href="#">Terms</a></li>
+				      </ul>
+				    </div>
+				  </div>
+				</div>
+			</footer>
+
+    </body>
+</html>
