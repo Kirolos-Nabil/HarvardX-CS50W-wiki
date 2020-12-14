@@ -14,6 +14,7 @@ Hint: It would start to get tedious if every page on wiki had to be written in H
 
 Requirements for this project:
 After install python you need to install this modules just open cmd then run next two lines separated
+
 python -m pip install Django
 
 pip3 install markdown2
