@@ -22,12 +22,15 @@ def index(request):
             for entry in util.list_entries():
                 if data.upper() in entry.upper():
                     substringEntries.append(entry)
-                    return render(request, "encyclopedia/index.html", {
-                        "entries": substringEntries
-                    })
-            return render(request, "encyclopedia/notFound.html", {
-                "entryTitle": data
-            })
+            
+            if substringEntries:
+                return render(request, "encyclopedia/index.html", {
+                    "entries": substringEntries
+                })
+            else:
+                return render(request, "encyclopedia/notFound.html", {
+                    "entryTitle": data
+                })
         
     return render(request, "encyclopedia/index.html", {
         "entries": util.list_entries()
