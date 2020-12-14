@@ -4,7 +4,7 @@ Hint: I made this project to accomplish project1 portion of HarvardX CS50W cours
 
 App name: wiki
 
-Breif description: This is a simple book review app made with django. Anyone can use this website features you have to login first. You can search for any subject that you whant to read about it, view it and edit it if thier is any wrong information at what you read, also you can create new subjects that you whant to write about to feed our site with your knowledge.
+Breif description: This is a wiki app made with django. Anyone can use this website features you have to login first. You can search for any subject that you whant to read about it, view it and edit it if thier is any wrong information at what you read, also you can create new subjects that you whant to write about to feed our site with your knowledge.
 
 Technology used: HTML, CSS, BOOTSTRAP, PYTHON, Django
 
